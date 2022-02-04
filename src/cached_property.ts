@@ -1,5 +1,6 @@
-/* eslint-disable import/prefer-default-export */
 /* eslint-disable @typescript-eslint/naming-convention */
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable import/prefer-default-export */
 /**
  * Implement cached_property for typescript
  *
