@@ -1,0 +1,6 @@
+{
+  "name": "cached_property",
+  "main": "index.js",
+  "author": "Elan Ruusamäe <glen@pld-linux.org>",
+  "license": "MIT"
+}
