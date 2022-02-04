@@ -8,21 +8,25 @@
  * https://www.typescriptlang.org/docs/handbook/decorators.html#accessor-decorators
  */
 
-// eslint-disable-next-line @typescript-eslint/ban-types
-export const cached_property = (target: Object, propertyKey: string, descriptor: PropertyDescriptor): void => {
+export const cached_property = (target: any, propertyKey: string, descriptor: PropertyDescriptor): any => {
   if (!descriptor.get) {
     throw new Error('The cached_property can be used only on get accessor');
   }
 
-  // eslint-disable-next-line @typescript-eslint/unbound-method
-  const original = <unknown>descriptor.get as any;
+  const original = (descriptor as any).get;
+  let cached = false;
+  let cache: any = null;
 
-  descriptor.get = (): unknown => {
-    // eslint-disable-next-line no-prototype-builtins
-    if (!original.hasOwnProperty('cached_property')) {
-      original.cached_property = original.apply(this, []);
-    }
+  const resolve = (obj: any): any => {
+    cache = original.apply(obj, []);
+    cached = true;
 
-    return original.cached_property as unknown;
+    return cache;
+  };
+
+  return {
+    get(): any {
+      return cached ? cache : resolve(this);
+    },
   };
 };
