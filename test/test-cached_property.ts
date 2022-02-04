@@ -5,9 +5,11 @@
 import { cached_property } from '../src/util/cached_property';
 
 class CachedPropertyTest {
+  private multiplier = -1000;
+
   @cached_property
   public get seconds(): number {
-    return Math.random() * 1000;
+    return Math.random() * this.multiplier;
   }
 }
 
