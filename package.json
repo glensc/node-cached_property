@@ -1,5 +1,8 @@
 {
   "name": "cached_property",
   "author": "Elan Ruusamäe <glen@pld-linux.org>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^4.5.5"
+  }
 }
