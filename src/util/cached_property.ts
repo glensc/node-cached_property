@@ -7,6 +7,7 @@
  * https://docs.python.org/3/library/functools.html#functools.cached_property
  * https://akoshochrein.com/posts/build-a-simple-in-memory-cache-with-typescript-decorators/
  * https://www.typescriptlang.org/docs/handbook/decorators.html#accessor-decorators
+ * https://www.digitalocean.com/community/tutorials/how-to-use-decorators-in-typescript
  */
 
 export const cached_property = (target: any, propertyKey: string, descriptor: PropertyDescriptor): any => {
