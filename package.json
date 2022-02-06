@@ -4,7 +4,10 @@
   "keywords": [
     "cached_property",
     "decorator",
-    "typescript"
+    "memoize",
+    "memoization",
+    "memoise",
+    "memoisation"
   ],
   "license": "MIT",
   "devDependencies": {
