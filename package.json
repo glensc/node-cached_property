@@ -9,5 +9,9 @@
   "license": "MIT",
   "devDependencies": {
     "typescript": "^4.5.5"
+  },
+  "scripts": {
+    "build": "tsc",
+    "prepare-release": "yarn install && yarn build && yarn version --new-version $APP_VERSION --no-git-tag-version"
   }
 }
