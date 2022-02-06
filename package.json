@@ -1,6 +1,11 @@
 {
   "name": "cached_property",
   "author": "Elan Ruusamäe <glen@pld-linux.org>",
+  "keywords": [
+    "cached_property",
+    "decorator",
+    "typescript"
+  ],
   "license": "MIT",
   "devDependencies": {
     "typescript": "^4.5.5"
