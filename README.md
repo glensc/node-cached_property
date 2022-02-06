@@ -7,6 +7,16 @@ inspired by Python 3.8 [functools.cached_property].
 
 [functools.cached_property]: https://docs.python.org/3/library/functools.html#functools.cached_property
 
+# Usage
+
+```shell
+yarn add cached_property
+```
+
+```ts
+import { cached_property } from "cached_property";
+```
+
 # Example
 
 ```ts
