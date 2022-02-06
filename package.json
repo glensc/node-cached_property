@@ -10,6 +10,12 @@
   "devDependencies": {
     "typescript": "^4.5.5"
   },
+  "main": "src/index.js",
+  "types": "src/index.d.ts",
+  "files": [
+    "src/**/*.d.ts",
+    "src/**/*.js"
+  ],
   "scripts": {
     "build": "tsc",
     "prepare-release": "yarn install && yarn build && yarn version --new-version $APP_VERSION --no-git-tag-version"
