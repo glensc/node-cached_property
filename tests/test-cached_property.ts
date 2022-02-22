@@ -2,7 +2,7 @@
 /* eslint-disable class-methods-use-this */
 /* eslint-disable no-console */
 
-import { cached_property } from '../src/cached_property';
+import { cached_property } from '../src';
 
 class CachedPropertyTest {
   private multiplier = -1000;
