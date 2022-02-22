@@ -5,7 +5,11 @@
 import { cached_property } from '../src';
 
 class CachedPropertyTest {
-  private multiplier = -1000;
+  private readonly multiplier: number;
+
+  constructor() {
+    this.multiplier = -Math.random() * 1000;
+  }
 
   @cached_property
   public get seconds(): number {
@@ -18,8 +22,16 @@ class CachedPropertyTest {
   }
 }
 
-const t = new CachedPropertyTest();
+const t1 = new CachedPropertyTest();
+const t2 = new CachedPropertyTest();
 
-console.log(t.seconds);
-console.log(t.seconds);
-console.log(t.more_seconds);
+console.log('t1', t1)
+console.log('t2', t2)
+
+console.log(t1.seconds);
+console.log(t1.seconds);
+console.log(t1.more_seconds);
+
+console.log(t2.seconds);
+console.log(t2.seconds);
+console.log(t2.more_seconds);
