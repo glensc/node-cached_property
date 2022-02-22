@@ -16,19 +16,24 @@ export const cached_property = (target: any, propertyKey: string, descriptor: Pr
   }
 
   const original = (descriptor as any).get;
-  let cached = false;
-  let cache: any = null;
 
-  const resolve = (obj: any): any => {
-    cache = original.apply(obj, []);
-    cached = true;
+  const resolve = (cache: any, obj: any): any => {
+    cache.cache = original.apply(obj, []);
+    cache.cached = true;
 
-    return cache;
+    return cache.cache;
   };
 
   return {
     get(): any {
-      return cached ? cache : resolve(this);
+      const symbol = `@cached_property#${propertyKey}`;
+      this[symbol] ||= {
+        cached: false,
+        cache: null,
+      };
+      const cache = this[symbol];
+
+      return cache.cached ? cache.cache : resolve(cache, this);
     },
   };
 };
