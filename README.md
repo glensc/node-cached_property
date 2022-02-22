@@ -21,7 +21,11 @@ import { cached_property } from "cached_property";
 
 ```ts
 class CachedPropertyTest {
-  private multiplier = -1000;
+  private readonly multiplier: number;
+
+  constructor() {
+    this.multiplier = -Math.random() * 1000;
+  }
 
   @cached_property
   public get seconds(): number {
@@ -34,17 +38,30 @@ class CachedPropertyTest {
   }
 }
 
-const t = new CachedPropertyTest();
+const t1 = new CachedPropertyTest();
+const t2 = new CachedPropertyTest();
 
-console.log(t.seconds);
-console.log(t.seconds);
-console.log(t.more_seconds);
+console.log('t1', t1)
+console.log('t2', t2)
+
+console.log(t1.seconds);
+console.log(t1.seconds);
+console.log(t1.more_seconds);
+
+console.log(t2.seconds);
+console.log(t2.seconds);
+console.log(t2.more_seconds);
 ```
 
 prints:
 
 ```
--239.2518616963777
--239.2518616963777
--20.830758314434703
+t1 CachedPropertyTest { multiplier: -744.8363910755569 }
+t2 CachedPropertyTest { multiplier: -740.5825190870856 }
+-577.7473504371724
+-577.7473504371724
+-377.27881344400447
+-139.17929406315005
+-139.17929406315005
+-648.857438477043
 ```
