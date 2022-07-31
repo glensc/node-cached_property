@@ -1,4 +1,4 @@
-# cached_property for Node
+# cached_property for Node and TypeScript
 
 A `@cached_property` decorator for Node.
 
