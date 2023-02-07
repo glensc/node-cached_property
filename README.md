@@ -43,8 +43,8 @@ class CachedPropertyTest {
 const t1 = new CachedPropertyTest();
 const t2 = new CachedPropertyTest();
 
-console.log('t1', t1)
-console.log('t2', t2)
+console.log('t1', t1);
+console.log('t2', t2);
 
 console.log(t1.seconds);
 console.log(t1.seconds);
