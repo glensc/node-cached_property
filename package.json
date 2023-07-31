@@ -1,6 +1,7 @@
 {
   "name": "cached_property",
   "author": "Elan Ruusamäe <glen@pld-linux.org>",
+  "homepage": "https://github.com/glensc/node-cached_property",
   "keywords": [
     "cached_property",
     "decorator",
